@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "react-native-test-app",
-    "slug": "react-native-test-app",
+    "name": "taylors-test-app",
+    "scheme": "taylors-test-app",
+    "slug": "taylors-test-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
