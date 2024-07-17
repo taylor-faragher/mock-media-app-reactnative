@@ -8,10 +8,12 @@ import { useEffect, useState } from "react";
 import { getAllPosts, getLatestPosts } from "@/lib/appWrite";
 import useAppWrite from "@/lib/useAppWrite";
 import VideoCard from "@/components/VideoCard";
+import { useGlobalContext } from "@/context/GlobalProvider";
 
 const Home = () => {
     const [refreshing, setRefreshing] = useState(false)
-    
+    const {user, setUser, setIsLoggedIn} =  useGlobalContext();
+
     const {data: posts, refetch} = useAppWrite(getAllPosts);
 
     const {data: latestPosts} = useAppWrite(getLatestPosts);
@@ -34,8 +36,8 @@ const Home = () => {
                     <View className="flex my-6 px-4 space-y-6" >
                         <View className="flex justify-between items-start flex-row mb-6">
                             <View>
-                                <Text className="font-pmedium text-sm text-gray-100">Welcome Back</Text>
-                                <Text className="text-2xl font-psemibold text-white">Taylor</Text>
+                                <Text className="font-pmedium text-sm text-gray-100">Welcome Back,</Text>
+                                <Text className="text-2xl font-psemibold text-white">{user?.username}</Text>
                             </View>
                             <View className="mt-1.5">
                                 <Image 
