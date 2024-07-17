@@ -27,7 +27,7 @@ const SearchInput = ({initialQuery}) => {
                         if (pathname.startsWith("/search")) {
                             router.setParams({ query });
                         } else {
-                            router.push(`/search/${query}`);
+                            router.push(`search/${query}`);
                         }
                     }}
                 >
